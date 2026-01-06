@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+
+.vscode
+!.vscode/extensions.json
+.yarn
+.env.dev
+.env.yarn
+*.local
+*.tsbuildinfo
+
+node_modules
