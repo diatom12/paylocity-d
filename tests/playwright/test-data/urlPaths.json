@@ -1,0 +1,5 @@
+{
+  "loginPage": "/Prod/Account/Login",
+  "benefitDashboard": "/Prod/Benefits",
+  "logOut": "/Prod/Account/LogOut"
+}
