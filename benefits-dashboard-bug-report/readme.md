@@ -6,7 +6,7 @@ Benefits Dashboard application.
 ## Scope
 
 - UI testing (manual exploratory testing)
-- API testing (manual / via Postman or similar tool)
+- API testing (manual / via Postman)
 
 ## Structure
 
