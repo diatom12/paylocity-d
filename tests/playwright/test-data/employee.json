@@ -1,0 +1,22 @@
+{
+  "Rogers": {
+    "id": "6e1b87fc-601f-452a-b7d7-41a11656826f",
+    "firstName": "Rogers",
+    "lastName": "Steve",
+    "dependents": 1,
+    "salary": 52000.0,
+    "grossPay": 2000.0,
+    "benefitsCost": 57.69,
+    "netPay": 1942.31
+  },
+  "Tester": {
+    "id": "3c4f5e2a-8b1d-4f3e-9f4e-2d5f6a7b8c9d",
+    "firstName": "User",
+    "lastName": "Tester",
+    "dependents": 2,
+    "salary": 52000.0,
+    "grossPay": 2000.0,
+    "benefitsCost": 76.92,
+    "netPay": 1923.08
+  }
+}

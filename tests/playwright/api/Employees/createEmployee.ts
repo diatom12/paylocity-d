@@ -1,5 +1,5 @@
 import { expectFunction, Page } from "../../core/types";
-import { Employee } from "../../core/apiTypes/Employee";
+import { Employee } from "../../core/apiTypes/employee";
 
 export async function createEmployee(
   { page, expect }: { page: Page; expect: expectFunction },
@@ -8,7 +8,7 @@ export async function createEmployee(
   let responseData: any;
 
   await expect(async () => {
-    const response = await page.request.post("/api/Employees", {
+    const response = await page.request.post("/Prod/api/Employees", {
       data: payload,
     });
 

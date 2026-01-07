@@ -9,4 +9,15 @@
 *.local
 *.tsbuildinfo
 
-node_modules
+# Node dependencies
+/node_modules
+
+# Playwright reports and artifacts
+/playwright-report/
+/blob-report/
+/test-results/
+last-run.json
+
+# Local files
+eror
+context.md

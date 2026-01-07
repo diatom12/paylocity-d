@@ -1,5 +1,5 @@
 import { expectFunction, Page } from "../../core/types";
-import { Employee } from "../../core/apiTypes/Employee";
+import { Employee } from "../../core/apiTypes/employee";
 
 export async function updateEmployee(
   { page, expect }: { page: Page; expect: expectFunction },

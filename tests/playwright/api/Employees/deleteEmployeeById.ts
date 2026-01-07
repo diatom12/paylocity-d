@@ -5,7 +5,9 @@ export async function deleteEmployee(
   employeeId: string
 ) {
   await expect(async () => {
-    const response = await page.request.delete(`/api/Employees/${employeeId}`);
+    const response = await page.request.delete(
+      `/Prod/api/Employees/${employeeId}`
+    );
 
     expect(response.status(), "Expected 200 response status").toBe(200);
   }).toPass({

@@ -7,7 +7,9 @@ export async function getEmployeeById(
   let responseData: any;
 
   await expect(async () => {
-    const response = await page.request.get(`/api/Employees/${employeeId}`);
+    const response = await page.request.get(
+      `/Prod/api/Employees/${employeeId}`
+    );
 
     expect(response.status(), "Expected 200 response status").toBe(200);
     responseData = await response.json();

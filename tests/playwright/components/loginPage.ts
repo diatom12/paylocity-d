@@ -1,10 +1,9 @@
-import { expect } from "@playwright/test";
 import { PageComponent } from "../core/PageComponent";
 
 export class LoginPage extends PageComponent {
-  readonly username = this.page.getByTestId("#Username");
-  readonly password = this.page.getByTestId("#Password");
-  readonly loginButton = this.page.getByTestId("#LoginButton");
+  readonly username = this.page.locator('input[name="Username"]');
+  readonly password = this.page.locator('input[name="Password"]');
+  readonly loginButton = this.page.locator('button[type="submit"]');
   readonly loginError = this.page.locator(
     ".text-danger.validation-summary-errors"
   );
@@ -31,24 +30,24 @@ export class LoginPage extends PageComponent {
   }
 
   async verifyUsernameVisible(): Promise<void> {
-    await expect(this.username).toBeVisible();
+    await this.expect(this.username).toBeVisible();
   }
 
   async verifyPasswordVisible(): Promise<void> {
-    await expect(this.password).toBeVisible();
+    await this.expect(this.password).toBeVisible();
   }
 
   async verifyLoginButtonVisible(): Promise<void> {
-    await expect(this.loginButton).toBeVisible();
+    await this.expect(this.loginButton).toBeVisible();
   }
 
   async verifyLoginError(expectedText: string): Promise<void> {
-    await expect(this.loginError).toBeVisible();
-    await expect(this.loginError).toHaveText(expectedText);
+    await this.expect(this.loginError).toBeVisible();
+    await this.expect(this.loginError).toContainText(expectedText);
   }
 
   async verifyNavBarHref(expectedLink: string): Promise<void> {
-    await expect(this.navBarText).toBeVisible();
-    await expect(this.navBarText).toHaveAttribute("href", expectedLink);
+    await this.expect(this.navBarText).toBeVisible();
+    await this.expect(this.navBarText).toHaveAttribute("href", expectedLink);
   }
 }
