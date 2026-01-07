@@ -1,0 +1,114 @@
+{
+  "info": {
+    "_postman_id": "31eb5b38-ed5a-4e28-b1b3-3eca28e00b3f",
+    "name": "Paylocity Benefits API",
+    "description": "Postman collection prepared from Paylocity Benefits OpenAPI spec\n\n[https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/swagger/v1/swagger.json](https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/swagger/v1/swagger.json)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22577914"
+  },
+  "item": [
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Get All Employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Employees",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Employees/{{employeeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Employees", "{{employeeId}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"{{employeeId}}\",\n  \"username\": \"jdoe\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dependants\": 2,\n  \"salary\": 55000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Employees",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"null\",\n  \"id\": \"0c60bcc1-f257-4573-85e8-598c644b1d5e\",\n  \"firstName\": \"A\",\n  \"lastName\": \"B\",\n  \"dependants\": 11,\n  \"expiration\": \"2026-01-07T17:37:02.060Z\",\n  \"salary\": 0\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Employees",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Employees/{{employeeId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Employees", "{{employeeId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{username}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}",
+        "type": "string"
+      }
+    ]
+  }
+}
