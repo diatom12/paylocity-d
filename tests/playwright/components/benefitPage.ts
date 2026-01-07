@@ -1,10 +1,9 @@
-import { expect } from "@playwright/test";
 import { PageComponent } from "../core/PageComponent";
 
 export class BenefitPage extends PageComponent {
   readonly employeesTable = this.page.locator("#employeesTable");
   readonly employeeRows = this.employeesTable.locator("tbody tr");
-  readonly addEmployeeButton = this.page.locator("#Add");
+  readonly addEmployeeButton = this.page.locator("#add");
   readonly addEmployeeModal = this.page.locator("#employeeModal");
 
   getEmployeeRowByIndex(index: number) {
@@ -25,16 +24,16 @@ export class BenefitPage extends PageComponent {
   }
 
   async verifyEmployeeRowCount(expectedCount: number): Promise<void> {
-    await expect(this.employeeRows).toHaveCount(expectedCount);
+    await this.expect(this.employeeRows).toHaveCount(expectedCount);
   }
 
   async verifyTitleRow(): Promise<void> {
-    await expect(this.employeeRows).toHaveCount(1);
+    await this.expect(this.employeeRows).toHaveCount(1);
   }
 
   async verifyEmployeeId(index: number, expectedId: string): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.id).toHaveText(expectedId);
+    await this.expect(employee.id).toHaveText(expectedId);
   }
 
   async verifyEmployeeFirstName(
@@ -42,12 +41,12 @@ export class BenefitPage extends PageComponent {
     employeeName: string
   ): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.firstName).toHaveText(employeeName);
+    await this.expect(employee.firstName).toHaveText(employeeName);
   }
 
   async verifyEmployeeLastName(index: number, lastName: string): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.lastName).toHaveText(lastName);
+    await this.expect(employee.lastName).toHaveText(lastName);
   }
 
   async verifyEmployeeDependents(
@@ -55,17 +54,17 @@ export class BenefitPage extends PageComponent {
     dependents: string
   ): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.dependents).toHaveText(dependents);
+    await this.expect(employee.dependents).toHaveText(dependents);
   }
 
   async verifyEmployeeSalary(index: number, salary: string): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.salary).toHaveText(salary);
+    await this.expect(employee.salary).toHaveText(salary);
   }
 
   async verifyEmployeeGrossPay(index: number, grossPay: string): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.grossPay).toHaveText(grossPay);
+    await this.expect(employee.grossPay).toHaveText(grossPay);
   }
 
   async verifyEmployeeBenefitsCost(
@@ -73,12 +72,12 @@ export class BenefitPage extends PageComponent {
     benefitsCost: string
   ): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.benefitsCost).toHaveText(benefitsCost);
+    await this.expect(employee.benefitsCost).toHaveText(benefitsCost);
   }
 
   async verifyEmployeeNetPay(index: number, netPay: string): Promise<void> {
     const employee = this.getEmployeeRowByIndex(index);
-    await expect(employee.netPay).toHaveText(netPay);
+    await this.expect(employee.netPay).toHaveText(netPay);
   }
 
   async clickEditButton(index: number): Promise<void> {
@@ -96,6 +95,6 @@ export class BenefitPage extends PageComponent {
   }
 
   async verifyAddEmployeeModalVisible(): Promise<void> {
-    await expect(this.addEmployeeModal).toBeVisible();
+    await this.expect(this.addEmployeeModal).toBeVisible();
   }
 }

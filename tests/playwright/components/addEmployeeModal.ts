@@ -1,4 +1,3 @@
-import { expect } from "@playwright/test";
 import { PageComponent } from "../core/PageComponent";
 
 export class AddEmployeeModal extends PageComponent {
@@ -14,7 +13,11 @@ export class AddEmployeeModal extends PageComponent {
   readonly closeButton = this.modal.locator(".modal-header button.close");
 
   async expectVisibleAddEmployeeModal() {
-    await expect(this.modal).toBeVisible();
+    await this.expect(this.modal).toBeVisible();
+  }
+
+  async expectNotVisibleAddEmployeeModal() {
+    await this.expect(this.modal).not.toBeVisible();
   }
 
   async fillFormAddEmployeeModal(data: {
@@ -36,26 +39,26 @@ export class AddEmployeeModal extends PageComponent {
   }
 
   async verifyUpdateButtonText(expectedText: string): Promise<void> {
-    await expect(this.updateButton).toHaveText(expectedText);
+    await this.expect(this.updateButton).toHaveText(expectedText);
   }
 
   async verifyUpdateButtonVisible(): Promise<void> {
-    await expect(this.updateButton).toBeVisible();
+    await this.expect(this.updateButton).toBeVisible();
   }
 
   async verifyCancelButtonText(expectedText: string): Promise<void> {
-    await expect(this.cancelButton).toHaveText(expectedText);
+    await this.expect(this.cancelButton).toHaveText(expectedText);
   }
 
   async verifyCancelButtonVisible(): Promise<void> {
-    await expect(this.cancelButton).toBeVisible();
+    await this.expect(this.cancelButton).toBeVisible();
   }
 
   async verifyUpdateButtonNotVisible(): Promise<void> {
-    await expect(this.updateButton).not.toBeVisible();
+    await this.expect(this.updateButton).not.toBeVisible();
   }
 
   async verifyAddButtonNotVisible(): Promise<void> {
-    await expect(this.addButton).not.toBeVisible();
+    await this.expect(this.addButton).not.toBeVisible();
   }
 }

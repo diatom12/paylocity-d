@@ -22,6 +22,9 @@ export default defineConfig({
     screenshot: "only-on-failure",
     trace: "on-first-retry",
     baseURL: homepageUrl,
+    extraHTTPHeaders: {
+      Accept: "application/json",
+    },
   },
 });
 
