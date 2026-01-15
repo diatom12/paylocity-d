@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe("Employee Tests", () => {
-  test("Verify login form functionality with valid credentials", async ({
+  test("Verify that a user can successfully add and then delete an employe", async ({
     page,
   }) => {
     const loginPage = new LoginPage(page, expect, test.step);
